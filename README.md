@@ -3,7 +3,7 @@
 
 A group of house owners and managers (intermediaries) came together raising funds to build a booking and house-renting 
 web application. Such a system is currently lacking a backend application; a way to manage the houses that it displays, 
-as well as the very same owners and manager who will, in fact, become the users of that missing app.
+as well as the very same owners and managers who will, in fact, become the users of that missing app.
 
 You have been hired to design and code said application, making sure that it complies with the following requirements:
 
@@ -75,3 +75,9 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Further help
+
+Please read the comments added to every created or modified file in both the client and the server projects.
+
+Please check the https://github.com/manytostao/standard-rent-system/blob/master/server/src/app.module.ts file for info on the database connection. Modify as needed.
