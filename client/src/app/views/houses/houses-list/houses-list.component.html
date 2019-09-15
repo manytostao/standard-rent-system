@@ -1,0 +1,44 @@
+<div class="houses-list">
+  <div class="card">
+    <div class="card-header">
+      Houses
+      <div class="card-header-actions">
+        <a [routerLink]="['/houses/new']">
+          <button class="btn btn-primary">
+            New
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phones</th>
+          <th>Rooms</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let house of houses | paginate: { itemsPerPage: 5, currentPage: page }">
+          <td>{{house.name}}</td>
+          <td>{{house.address}}</td>
+          <td>{{house.phones}}</td>
+          <td>{{house.rooms}}</td>
+          <td>{{house.description}}</td>
+          <td>
+            <a class="btn btn-warning" [routerLink]="['/houses/edit', house.id]">Edit</a>
+            <a class="btn btn-danger" (click)="onDelete(house.id)">Delete</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
+
+<app-delete #deleteComponent></app-delete>
