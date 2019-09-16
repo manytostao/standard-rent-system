@@ -16,6 +16,8 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
 
+  jwtDecoder = jwt_decode;
+
   /**
    * Service constructor
    * @param cookieService Instance of the CookieService to be able to set and ¡retrieve cookies with ease
@@ -80,7 +82,7 @@ export class AuthService {
     }
 
     /* decodes the kwt to get the expiration date */
-    const jwt_decoded = jwt_decode(jwt);
+    const jwt_decoded = this.jwtDecoder(jwt);
 
     /* if the exp property is not in the jwt, it's considered an invalid token and return true */
     if (jwt_decoded.exp === undefined) {
@@ -110,7 +112,7 @@ export class AuthService {
     }
 
     /* decode the jwt */
-    const jwt_decoded = jwt_decode(jwt);
+    const jwt_decoded = this.jwtDecoder(jwt);
 
     return { id: jwt_decoded.sub, username: jwt_decoded.username, managerId: jwt_decoded.managerId };
   }
