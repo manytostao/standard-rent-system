@@ -35,7 +35,7 @@ export class AuthService {
     /* try to get a user from user service */
     const user = await this.usersService.findOne(username);
 
-    /* if ther is one, return it, otherwise, return null*/
+    /* if there is one, return it, otherwise, return null*/
     if (user && user.password === pass) {
       return { username: user.username, id: user.id, managerId: user.managerProfile.id };
     }
