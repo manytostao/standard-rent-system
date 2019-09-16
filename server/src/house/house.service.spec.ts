@@ -1,8 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HouseService } from './house.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { House } from './house.entity';
+
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
+
+import { HouseService } from './house.service';
+import { House } from './house.entity';
 
 describe('HouseService', () => {
     let service: HouseService;
